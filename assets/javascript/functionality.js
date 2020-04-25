@@ -79,6 +79,26 @@ $(document).ready(function() {
 
 // After some numbers are entered, when an operator is selected, store that in #operator and in it's variable -- the operator may be changed at any point after this
 
+$("#button-plus, #button-minus, #button-multiply, #button-divide, #button-power").on("click", function() {
+  if(firstNum !== undefined) {
+    console.log(firstNumber, "firstNumber");
+    if(this.id === "button-plus") {
+      op = "+";
+    } else if (this.id === "button-minus") {
+      op = "-";
+    } else if (this.id === "button-multiply") {
+      op = "*";
+    } else if (this.id === "button-divide") {
+      op = "/";
+    } else if (this.id === "button-power") {
+      op = "^";
+    }
+
+    console.log(op, "op in op");
+    operator.empty().append(op);
+  }
+});
+
 // After an operator is chosen, any additional numbers will be placed in # second-number and stored in a varable as a number -- no new numbers may be added to #first-number
 
 // When the equal button is clicked, it will do the math operation of the operator stored in #operator of the #first-number and #second-number
