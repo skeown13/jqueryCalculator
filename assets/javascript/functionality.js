@@ -140,6 +140,25 @@ $("#button-plus, #button-minus, #button-multiply, #button-divide, #button-power"
 
 // When the equal button is clicked, it will do the math operation of the operator stored in #operator of the #first-number and #second-number
 
+$("#button-equal").on("click", function() {
+
+  if(secondNum !== undefined) {
+    if(op === "+") {
+      result.append(parseInt(firstFullNum) + parseInt(secondFullNum));
+    } else if (op === "-") {
+      result.append(parseInt(firstFullNum) - parseInt(secondFullNum));
+    } else if (op === "*") {
+      result.append(parseInt(firstFullNum) * parseInt(secondFullNum));
+    } else if (op === "/") {
+      result.append(parseInt(firstFullNum) / parseInt(secondFullNum));
+    } else if (op === "^") {
+      result.append(Math.pow(parseInt(firstFullNum), parseInt(secondFullNum)));
+    } 
+  }
+
+
+})
+
 // Make the #clear-button clear all variables and the result card
 
 
