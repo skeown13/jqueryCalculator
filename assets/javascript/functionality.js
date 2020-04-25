@@ -38,13 +38,11 @@ $(document).ready(function() {
 // First number(s) clicked get placed in #first-number and stored in a variable as a number
 
   $("#button-0, #button-1, #button-2, #button-3, #button-4, #button-5, #button-6, #button-7, #button-8, #button-9").on("click", function() {
-    console.log(op, "op in first number");
-    console.log(this, "what is this");
+
     if(op === undefined) {
       if (this.id === "button-0") {
         firstFullNum = firstFullNum + "0";
         firstNum = 0;
-        console.log(firstFullNum);
       } else if (this.id === "button-1") {
         firstFullNum = firstFullNum + "1";
         firstNum = 1;
@@ -80,7 +78,6 @@ $(document).ready(function() {
       if (this.id === "button-0") {
         secondFullNum = secondFullNum + "0";
         secondNum = 0;
-        console.log(secondFullNum);
       } else if (this.id === "button-1") {
         secondFullNum = secondFullNum + "1";
         secondNum = 1;
@@ -119,7 +116,6 @@ $(document).ready(function() {
 
   $("#button-plus, #button-minus, #button-multiply, #button-divide, #button-power").on("click", function() {
     if(firstNum !== undefined) {
-      console.log(firstNumber, "firstNumber");
       if(this.id === "button-plus") {
         op = "+";
       } else if (this.id === "button-minus") {
@@ -132,7 +128,6 @@ $(document).ready(function() {
         op = "^";
       }
 
-      console.log(op, "op in op");
       operator.empty().append(op);
     }
   });
