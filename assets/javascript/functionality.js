@@ -74,7 +74,44 @@ $(document).ready(function() {
       };
 
       firstNumber.append(firstNum);
-    }
+
+    } else { 
+      if (this.id === "button-0") {
+        secondFullNum = secondFullNum + "0";
+        secondNum = 0;
+        console.log(secondFullNum);
+      } else if (this.id === "button-1") {
+        secondFullNum = secondFullNum + "1";
+        secondNum = 1;
+      } else if (this.id === "button-2") {
+        secondFullNum = secondFullNum + "2";
+        secondNum = 2;
+      } else if (this.id === "button-3") {
+        secondFullNum = secondFullNum + "3";
+        secondNum = 3;
+      } else if (this.id === "button-4") {
+        secondFullNum = secondFullNum + "4";
+        secondNum = 4;
+      } else if (this.id === "button-5") {
+        secondFullNum = secondFullNum + "5";
+        secondNum = 5;
+      } else if (this.id === "button-6") {
+        secondFullNum = secondFullNum + "6";
+        secondNum = 6;
+      } else if (this.id === "button-7") {
+        secondFullNum = secondFullNum + "7";
+        secondNum = 7;
+      } else if (this.id === "button-8") {
+        secondFullNum = secondFullNum + "8";
+        secondNum = 8;
+      } else if (this.id === "button-9") {
+        secondFullNum = secondFullNum + "9";
+        secondNum = 9;
+      };
+
+      secondNumber.append(secondNum);
+      
+    };
   });
 
 // After some numbers are entered, when an operator is selected, store that in #operator and in it's variable -- the operator may be changed at any point after this
