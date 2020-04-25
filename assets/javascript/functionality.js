@@ -7,6 +7,7 @@ $(document).ready(function() {
   let op;
   let secondNum;
   let secondFullNum = "";
+  let finalResult = false;
 
 // Variables to grab the id from HTML
 
@@ -75,7 +76,7 @@ $(document).ready(function() {
 
       firstNumber.append(firstNum);
 
-    } else { 
+    } else if(op !== undefined && finalResult === false) { 
       if (this.id === "button-0") {
         secondFullNum = secondFullNum + "0";
         secondNum = 0;
@@ -142,7 +143,7 @@ $(document).ready(function() {
 
   $("#button-equal").on("click", function() {
 
-    if(secondNum !== undefined) {
+    if(secondNum !== undefined && finalResult === false) {
       if(op === "+") {
         result.append(parseInt(firstFullNum) + parseInt(secondFullNum));
       } else if (op === "-") {
@@ -154,6 +155,7 @@ $(document).ready(function() {
       } else if (op === "^") {
         result.append(Math.pow(parseInt(firstFullNum), parseInt(secondFullNum)));
       } 
+      finalResult = true;
     }
 
   });
@@ -171,6 +173,7 @@ $(document).ready(function() {
     secondNum = undefined;
     firstFullNum = "";
     secondFullNum = "";
+    finalResult = false;
 
   });
 
