@@ -2,7 +2,35 @@ $(document).ready(function() {
 
 // Variables to store numbers/operators
 
+let firstNum;
+let firstFullNum = "";
+let op;
+let secondNum;
+let secondFullNum = "";
+
 // Variables to grab the id from HTML
+
+let button1 = $("#button-1");
+let button2 = $("#button-2");
+let button3 = $("#button-3");
+let buttonPlus = $("#button-plus");
+let button4 = $("#button-4");
+let button5 = $("#button-5");
+let button6 = $("#button-6");
+let buttonMinus = $("#button-minus");
+let button7 = $("#button-7");
+let button8 = $("#button-8");
+let button9 = $("#button-9");
+let buttonMultiply = $("#button-multiply");
+let button0 = $("#button-0");
+let buttonDivide = $("#button-divide");
+let buttonPower = $("#button-power");
+let buttonEqual = $("#button-equal");
+let buttonClear = $("#button-clear");
+let firstNumber = $("#first-number");
+let operator = $("#operator");
+let secondNumber = $("#second-number");
+let result = $("#result");
 
 // If assignment operator is clicked first, nothing happens
 
