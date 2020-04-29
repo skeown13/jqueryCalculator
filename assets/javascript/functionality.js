@@ -27,27 +27,16 @@ $(document).ready(function() {
     } else if(op !== undefined && finalResult === false) { 
       secondFullNum += $(this).val();
       secondNumber.text(secondFullNum);
-       
+
     };
   });
 
 // After some numbers are entered, when an operator is selected, store that in #operator and in it's variable -- the operator may be changed at any point after this
 
-  $("#button-plus, #button-minus, #button-multiply, #button-divide, #button-power").on("click", function() {
-    if(firstFullNum !== undefined) {
-      if(this.id === "button-plus") {
-        op = "+";
-      } else if (this.id === "button-minus") {
-        op = "-";
-      } else if (this.id === "button-multiply") {
-        op = "*";
-      } else if (this.id === "button-divide") {
-        op = "/";
-      } else if (this.id === "button-power") {
-        op = "^";
-      }
-
-      operator.empty().append(op);
+  $(".operator").on("click", function() {
+    if(firstFullNum !== "") {
+      op = $(this).text();
+      operator.text(op);
     }
   });
 
@@ -59,15 +48,15 @@ $(document).ready(function() {
 
     if(secondFullNum !== undefined && finalResult === false) {
       if(op === "+") {
-        result.append(parseInt(firstFullNum) + parseInt(secondFullNum));
+        result.text(parseInt(firstFullNum) + parseInt(secondFullNum));
       } else if (op === "-") {
-        result.append(parseInt(firstFullNum) - parseInt(secondFullNum));
+        result.text(parseInt(firstFullNum) - parseInt(secondFullNum));
       } else if (op === "*") {
-        result.append(parseInt(firstFullNum) * parseInt(secondFullNum));
+        result.text(parseInt(firstFullNum) * parseInt(secondFullNum));
       } else if (op === "/") {
-        result.append(parseInt(firstFullNum) / parseInt(secondFullNum));
+        result.text(parseInt(firstFullNum) / parseInt(secondFullNum));
       } else if (op === "^") {
-        result.append(Math.pow(parseInt(firstFullNum), parseInt(secondFullNum)));
+        result.text(Math.pow(parseInt(firstFullNum), parseInt(secondFullNum)));
       } 
       finalResult = true;
     }
