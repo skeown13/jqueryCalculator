@@ -4,7 +4,6 @@ $(document).ready(function() {
 
   let firstFullNum = "";
   let op;
-  let secondNum;
   let secondFullNum = "";
   let finalResult = false;
 
@@ -26,40 +25,9 @@ $(document).ready(function() {
       firstNumber.text(firstFullNum);
 
     } else if(op !== undefined && finalResult === false) { 
-      if (this.id === "button-0") {
-        secondFullNum = secondFullNum + "0";
-        secondNum = 0;
-      } else if (this.id === "button-1") {
-        secondFullNum = secondFullNum + "1";
-        secondNum = 1;
-      } else if (this.id === "button-2") {
-        secondFullNum = secondFullNum + "2";
-        secondNum = 2;
-      } else if (this.id === "button-3") {
-        secondFullNum = secondFullNum + "3";
-        secondNum = 3;
-      } else if (this.id === "button-4") {
-        secondFullNum = secondFullNum + "4";
-        secondNum = 4;
-      } else if (this.id === "button-5") {
-        secondFullNum = secondFullNum + "5";
-        secondNum = 5;
-      } else if (this.id === "button-6") {
-        secondFullNum = secondFullNum + "6";
-        secondNum = 6;
-      } else if (this.id === "button-7") {
-        secondFullNum = secondFullNum + "7";
-        secondNum = 7;
-      } else if (this.id === "button-8") {
-        secondFullNum = secondFullNum + "8";
-        secondNum = 8;
-      } else if (this.id === "button-9") {
-        secondFullNum = secondFullNum + "9";
-        secondNum = 9;
-      };
-
-      secondNumber.append(secondNum);
-      
+      secondFullNum += $(this).val();
+      secondNumber.text(secondFullNum);
+       
     };
   });
 
@@ -89,7 +57,7 @@ $(document).ready(function() {
 
   $("#button-equal").on("click", function() {
 
-    if(secondNum !== undefined && finalResult === false) {
+    if(secondFullNum !== undefined && finalResult === false) {
       if(op === "+") {
         result.append(parseInt(firstFullNum) + parseInt(secondFullNum));
       } else if (op === "-") {
@@ -115,7 +83,6 @@ $(document).ready(function() {
     secondNumber.empty();
     result.empty();
     op = undefined;
-    secondNum = undefined;
     firstFullNum = "";
     secondFullNum = "";
     finalResult = false;
