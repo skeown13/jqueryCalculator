@@ -76,7 +76,7 @@ $(document).ready(function() {
 
 // Make the #clear-button clear all variables and the result card
 
-  $("#button-clear").on("click", function(){
+  $(".clear").on("click", function(){
 
     firstNumber.empty();
     operator.empty();
