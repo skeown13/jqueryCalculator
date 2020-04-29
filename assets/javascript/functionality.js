@@ -35,8 +35,8 @@ $(document).ready(function() {
 
   $(".operator").on("click", function() {
     if(firstFullNum !== "") {
-      op = $(this).text();
-      operator.text(op);
+      op = $(this).val();
+      operator.text($(this).text());
     }
   });
 
@@ -44,22 +44,33 @@ $(document).ready(function() {
 
 // When the equal button is clicked, it will do the math operation of the operator stored in #operator of the #first-number and #second-number
 
-  $("#button-equal").on("click", function() {
+  $(".equal").on("click", function() {
 
-    if(secondFullNum !== undefined && finalResult === false) {
-      if(op === "+") {
-        result.text(parseInt(firstFullNum) + parseInt(secondFullNum));
-      } else if (op === "-") {
-        result.text(parseInt(firstFullNum) - parseInt(secondFullNum));
-      } else if (op === "*") {
-        result.text(parseInt(firstFullNum) * parseInt(secondFullNum));
-      } else if (op === "/") {
-        result.text(parseInt(firstFullNum) / parseInt(secondFullNum));
-      } else if (op === "^") {
-        result.text(Math.pow(parseInt(firstFullNum), parseInt(secondFullNum)));
-      } 
-      finalResult = true;
-    }
+    firstFullNum = parseInt(firstFullNum);
+    secondFullNum = parseInt(secondFullNum);
+  
+    if(op === "plus") {
+      result.text(firstFullNum + secondFullNum);
+    } 
+    
+    else if (op === "minus") {
+      result.text(firstFullNum - secondFullNum);
+    } 
+    
+    else if (op === "times") {
+      result.text(firstFullNum * secondFullNum);
+    } 
+    
+    else if (op === "divide") {
+      result.text(firstFullNum / secondFullNum);
+    } 
+    
+    else if (op === "power") {
+      result.text(Math.pow(firstFullNum), secondFullNum);
+    } 
+
+    finalResult = true;
+    
 
   });
 
