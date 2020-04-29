@@ -14,9 +14,7 @@ $(document).ready(function() {
   let secondNumber = $("#second-number");
   let result = $("#result");
 
-// If assignment operator is clicked first, nothing happens
-
-// First number(s) clicked get placed in #first-number and stored in a variable as a number
+// When you click on a number, if an operator has not yet been assigned the number will go in the #first-number slot. If an operator has been assigned and the equals button has not yet been clicked, the number will go in the #second-number slot.
 
   $(".number").on("click", function() {
 
@@ -39,8 +37,6 @@ $(document).ready(function() {
       operator.text($(this).text());
     }
   });
-
-// After an operator is chosen, any additional numbers will be placed in # second-number and stored in a varable as a number -- no new numbers may be added to #first-number
 
 // When the equal button is clicked, it will do the math operation of the operator stored in #operator of the #first-number and #second-number
 
